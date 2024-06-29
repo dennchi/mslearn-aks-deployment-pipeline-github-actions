@@ -3,7 +3,7 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get update -y
 RUN git clone https://github.com/MicrosoftDocs/mslearn-aks-deployment-pipeline-github-actions /contoso-website
 WORKDIR /contoso-website/src
 RUN git submodule update --init themes/introduction
-RUN sudo npm i -g postcss-cli
-RUN sudo npm i -g autoprefixer 
+RUN npm i -g postcss-cli
+RUN npm i -g autoprefixer 
 RUN hugo && mv public/* /usr/share/nginx/html
 EXPOSE 80
